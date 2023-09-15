@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <!-- Inclua os links para os arquivos CSS do Bootstrap ou o seu estilo personalizado aqui -->
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Claueder Barros</a>
+            <!-- Adicione aqui a barra de navegação ou menu se necessário -->
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Cadastro de Usuário</h2>
+                <form id="cadastro-form">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" id="senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmar-senha">Confirmar Senha:</label>
+                        <input type="password" class="form-control" id="confirmar-senha" name="confirmar-senha" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="cadastrarUsuario()">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclua o script do Firebase com as informações reais -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+      // Configure o Firebase com as informações do seu projeto Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyBlJ59cN_UgmluN8Q38f2A8_FqdRVmTvNk",
+        authDomain: "site-claueder-barros.firebaseapp.com",
+        projectId: "site-claueder-barros",
+        storageBucket: "site-claueder-barros.appspot.com",
+        messagingSenderId: "541974575679",
+        appId: "1:541974575679:web:91169f6a737f1c733b168a",
+        measurementId: "G-3EWSKJR5PN"
+      };
+
+      // Inicialize o Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // Função para cadastrar um usuário
+      function cadastrarUsuario() {
+          var nome = document.getElementById('nome').value;
+          var email = document.getElementById('email').value;
+          var senha = document.getElementById('senha').value;
+          var confirmarSenha = document.getElementById('confirmar-senha').value;
+
+          if (senha !== confirmarSenha) {
+              alert('As senhas não coincidem. Por favor, insira senhas iguais.');
+              return;
+          }
+
+          const auth = getAuth();
+          createUserWithEmailAndPassword(auth, email, senha)
+              .then(function (userCredential) {
+                  // O usuário foi registrado com sucesso
+                  alert('Usuário registrado com sucesso!');
+                  // Redirecione para a página de login ou outra página desejada
+                  window.location.href = 'pagina_de_login.html';
+              })
+              .catch(function (error) {
+                  // Ocorreu um erro durante o registro
+                  alert('Erro ao registrar usuário: ' + error.message);
+              });
+      }
+    </script>
+</body>
+</html>

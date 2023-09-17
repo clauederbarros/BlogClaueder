@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog do Claueder Barros</title>
-    <!-- Inclua os links para os arquivos CSS do Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <header class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#">Claueder Barros</a>
@@ -28,9 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Textos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastro</a>
-                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Anúncios</a>
+                    </li> 
                 </ul>
             </div>
         </div>
@@ -57,11 +57,32 @@ Obrigado pelo seu apoio e por se juntar a mim nesta jornada.</p>
         </div>
     </div>
 
-    <!-- Formulário do Google Forms incorporado -->
     <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJw5Mk0rbxnTq82EIkxMObEwtI5jkoK4TaQpqk3mAUsw68Ww/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="post">
+                    <!-- ... (seu conteúdo de postagem existente) ... -->
+                </div>
+
+                <!-- Área de Comentários -->
+                <div id="comments">
+                    <h3>Comentários</h3>
+                    <div id="comment-list">
+                        <!-- Os comentários serão exibidos aqui -->
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Deixe seu comentário:</label>
+                        <textarea class="form-control" id="comment" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary" id="comment-button">Enviar Comentário</button>
+                </div>
+
+                <!-- Área de Likes -->
+                <div id="likes">
+                    <h3>Likes</h3>
+                    <p id="like-count">0 Likes</p>
+                    <button class="btn btn-primary" id="like-button">Curtir</button>
+                </div>
             </div>
         </div>
     </div>
@@ -70,9 +91,72 @@ Obrigado pelo seu apoio e por se juntar a mim nesta jornada.</p>
         <p>Feito por Claueder Barros 14/09/2023 que traga mudanças.</p>
     </footer>
 
-    <!-- Inclua os scripts do Bootstrap no final do corpo do documento para melhor desempenho -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+
+    <script>
+        // Configuração do Firebase (substitua pelos seus próprios dados)
+        const firebaseConfig = {
+            apiKey: "AIzaSyBlJ59cN_UgmluN8Q38f2A8_FqdRVmTvNk",
+            authDomain: "site-claueder-barros.firebaseapp.com",
+            databaseURL: "https://site-claueder-barros-default-rtdb.firebaseio.com",
+            projectId: "site-claueder-barros",
+            storageBucket: "site-claueder-barros.appspot.com",
+            messagingSenderId: "541974575679",
+            appId: "1:541974575679:web:91169f6a737f1c733b168a"
+        };
+
+        // Inicialize o Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const database = firebase.database();
+
+        // Referência ao nó de comentários
+        const commentsRef = database.ref('comments');
+
+        // Contador de likes
+        let likeCount = 0;
+
+        // Referência ao nó de likes
+        const likesRef = database.ref('likes');
+
+        // Carregar os likes iniciais
+        likesRef.once('value', (snapshot) => {
+            likeCount = snapshot.val() || 0;
+            document.getElementById('like-count').innerText = `${likeCount} Likes`;
+        });
+
+        // Atualizar o contador de likes quando o botão de curtir for clicado
+        document.getElementById('like-button').addEventListener('click', () => {
+            likeCount += 1;
+            likesRef.set(likeCount);
+            document.getElementById('like-count').innerText = `${likeCount} Likes`;
+        });
+
+        // Exibir os comentários existentes
+        commentsRef.on('child_added', (snapshot) => {
+            const commentData = snapshot.val();
+            const commentElement = document.createElement('div');
+            commentElement.innerText = `${commentData.author}: ${commentData.text}`;
+            document.getElementById('comment-list').appendChild(commentElement);
+        });
+
+        // Enviar um novo comentário
+        document.getElementById('comment-button').addEventListener('click', () => {
+            const commentText = document.getElementById('comment').value;
+            const author = "Nome do Autor"; // Substitua pelo nome do autor
+            const newCommentRef = commentsRef.push();
+            newCommentRef.set({
+                author,
+                text: commentText
+            });
+            document.getElementById('comment').value = ''; // Limpar o campo de comentário após o envio
+        });
+    </script>
 </body>
 </html>

@@ -1,111 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalização de Compra - Itacuruçá Delivery 24h</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Claueder Barros - Vivendo com Esquizofrenia</title>
+
+    <!-- Adicione os links para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBib1ow6iExF5jMyqj1g9aafGJzpx91+cf" crossorigin="anonymous">
 </head>
 <body>
 
-<header class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Cabeçalho -->
+<header class="bg-dark text-white text-center py-5">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            Itacuruçá Delivery 24h
-        </a>
+        <!-- Substitua "Seu Logo" pelo seu logotipo -->
+        <h1 class="display-3">Claueder Barros</h1>
+        <p class="lead">Vivendo com Esquizofrenia</p>
+    </div>
+</header>
+
+<!-- Navegação -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Página Inicial</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#pagina-principal">Página Principal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bebidas</a>
+                    <a class="nav-link" href="#textos">Textos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tabacaria</a>
+                    <a class="nav-link" href="#fotos">Fotos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mercearia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fale Conosco</a>
+                    <a class="nav-link" href="#videos">Vídeos</a>
                 </li>
             </ul>
-            <button class="btn btn-success ml-3">Carrinho</button>
         </div>
     </div>
-</header>
+</nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center mt-5">
-            <img src="https://img.freepik.com/vetores-premium/sinal-correto-conjunto-de-icones-de-marca-direita-simbolo-plano-verde-marque-ok-sim-marcas-para-decisao-de-voto_473851-126.jpg" alt="Finalização da Compra" class="img-fluid" width="300" height="auto">
-            <h2 class="mt-3 text-success">Compra Finalizada!</h2>
-            <p>Total da Compra: R$ 99,99</p>
-            <p>Quantidade de Itens: <span id="quantidade-itens">0</span></p>
-            <p><a href="#">Veja todos os itens que você está comprando</a></p>
-            <a href="#" class="btn btn-success">Compre Agora</a>
-            <button id="comprar-btn" class="btn btn-primary ml-2">Comprar</button>
-            <button id="devolver-btn" class="btn btn-danger ml-2">Devolver</button>
-        </div>
-    </div>
+<!-- Conteúdo -->
+<div class="container mt-4">
+    <!-- Aqui você pode adicionar o conteúdo do seu blog -->
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
-<script>
-  // Configurar o Firebase (substitua pelas suas credenciais)
-  var firebaseConfig = {
-    apiKey: 'AIzaSyDPgbdOhfxJk64Tzd1iuiGLKhyS2d8n5Uk',
-    authDomain: 'cerebro-563e0.firebaseapp.com',
-    databaseURL: 'https://cerebro-563e0-default-rtdb.firebaseio.com/',
-    projectId: 'cerebro-563e0',
-  };
+<!-- Adicione os links para o Bootstrap JS e jQuery (necessários para funcionalidades do Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-wfSNzjYqiqm76jDqQjD7jtFjMrc5C+CdKcZtLST/B9jTNR7xFSJGHe7QFSqDNOt6" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBib1ow6iExF5jMyqj1g9aafGJzpx91+cf" crossorigin="anonymous"></script>
 
-  // Inicializar o Firebase
-  firebase.initializeApp(firebaseConfig);
+</body>
+</html>
+<!-- Conteúdo -->
+<div class="container mt-4">
+    <!-- Aqui você pode adicionar o conteúdo do seu blog -->
+</div>
 
+<!-- Rodapé -->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2024 Claueder Barros - Vivendo com Esquizofrenia</p>
+    </div>
+</footer>
 
-  // Referência ao nó no banco de dados onde a quantidade de itens está armazenada
-  var itemsRef = firebase.database().ref('quantidade_de_itens');
-
-  // Monitorar alterações na quantidade de itens
-  itemsRef.on('value', function(snapshot) {
-    var quantidadeItens = snapshot.val();
-    // Atualizar a quantidade de itens na página
-    document.getElementById('quantidade-itens').innerText = quantidadeItens;
-
-    // Habilitar ou desabilitar o botão de devolução com base na quantidade de itens
-    if (quantidadeItens <= 0) {
-      document.getElementById('devolver-btn').disabled = true;
-    } else {
-      document.getElementById('devolver-btn').disabled = false;
-    }
-  });
-
-  // Adicionar um ou remover um item quando os botões de compra e devolução forem clicados
-  document.getElementById('comprar-btn').addEventListener('click', function() {
-    // Aumentar a quantidade de itens no banco de dados
-    itemsRef.transaction(function(quantidadeAtual) {
-      return (quantidadeAtual || 0) + 1;
-    });
-  });
-
-  document.getElementById('devolver-btn').addEventListener('click', function() {
-    // Diminuir a quantidade de itens no banco de dados, mas não abaixo de zero
-    itemsRef.transaction(function(quantidadeAtual) {
-      if (quantidadeAtual > 0) {
-        return quantidadeAtual - 1;
-      }
-      return quantidadeAtual;
-    });
-  });
-</script>
+<!-- Adicione os links para o Bootstrap JS e jQuery (necessários para funcionalidades do Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-wfSNzjYqiqm76jDqQjD7jtFjMrc5C+CdKcZtLST/B9jTNR7xFSJGHe7QFSqDNOt6" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBib1ow6iExF5jMyqj1g9aafGJzpx91+cf" crossorigin="anonymous"></script>
 </body>
 </html>

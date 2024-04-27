@@ -6,10 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controlando a Esquizofrenia</title>
     <!-- Bootstrap CSS -->
+    <link href="https://st<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlando a Esquizofrenia</title>
+    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         /* Estilos personalizados podem ser adicionados aqui */
+        .header {
+            background-color: #007bff; /* Cor de fundo do cabeçalho */
+            color: #fff; /* Cor do texto */
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px; /* Adiciona margem na parte inferior */
+        }
+
+        .header h1 {
+            font-size: 36px; /* Tamanho da fonte do título */
+            font-weight: bold; /* Peso da fonte */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px; /* Tamanho da fonte do subtexto */
+            font-style: italic; /* Estilo da fonte */
+        }
+
+        .post img {
+            margin-top: 20px; /* Adiciona margem na parte superior da foto */
+            margin-bottom: 20px; /* Adiciona margem na parte inferior da foto */
+        }
+
+        /* Estilos para o formulário de comentário */
+        #comment-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <h1>Controlando a Esquizofrenia</h1>
+            <p>Navegando pelos desafios diários em busca de uma vida plena</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Post -->
+        <div class="post">
+            <!-- Texto do post -->
+            <p class="mt-3"><strong>09/04/2024</strong></p>
+            <p>Bom dia, pessoal! ☀️ Hoje é um novo dia e estou pronto para começar meu trabalho aqui no Facebook, compartilhando momentos significativos e reflexões com vocês. Vamos fazer deste dia algo especial juntos!
+                Ontem, decidi fazer um vídeo para compartilhar com vocês, pois não estava me sentindo bem. Hoje, ao acordar, apesar de ter tido um pesadelo desagradável, percebo que estou me sentindo melhor. Acredito que nossos sonhos são mensagens do nosso subconsciente, então sempre tento refletir sobre eles, mesmo que não os compartilhe. No entanto, o importante é que consegui dormir esta noite, o que já é um progresso positivo.
+
+                Hoje, começo o dia cheio de animação. Decidi postar uma sequência de fotos e vídeos neste álbum do Facebook, além de atualizar o site que estou desenvolvendo. Ao fazer isso, continuo aprimorando minhas habilidades de desenvolvedor enquanto compartilho minha jornada com vocês.
+
+                Então, este é meu bom dia! Vamos explorar juntos as estratégias que venho desenvolvendo em colaboração com minha psicóloga, Amata Medeiros. Estou animado para compartilhar mais com vocês e continuar crescendo juntos.</p>
+
+            <!-- Comentários -->
+            <div id="comments">
+                <!-- Aqui serão exibidos os comentários -->
+            </div>
+
+            <!-- Formulário de comentário -->
+            <form id="comment-form" action="https://github.com/SeuNome/SeuRepositorio/issues/new" method="GET">
+                <input type="hidden" name="title" value="Novo Comentário - Controlando a Esquizofrenia">
+                <input type="hidden" name="labels" value="comentário">
+                <input type="hidden" name="assignees" value="">
+
+                <div class="form-group">
+                    <label for="comment">Deixe seu comentário:</label>
+                    <textarea class="form-control" id="comment" name="body" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Comentário</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script para recuperar os comentários do GitHub -->
+    <script>
+        // Função para recuperar os comentários do GitHub
+        function getCommentsFromGitHub() {
+            // URL da API do GitHub para recuperar issues
+            var apiUrl = 'https://api.github.com/clauederbarros/BlogClaueder/issues';
+
+            // Faça uma solicitação GET para a API do GitHub
+            fetch(apiUrl)
+                .then(function(response) {
+                    // Verifique se a resposta foi bem-sucedida
+                    if (response.ok) {
+                        // Parseie a resposta como JSON
+                        return response.json();
+                    }
+                    // Se a resposta não for bem-sucedida, lance um erro
+                    throw new Error('Erro ao recuperar os comentários do GitHub');
+                })
+                .then(function(data) {
+                    // Manipule os dados recebidos (comentários)
+                    displayComments(data);
+                })
+                .catch(function(error) {
+                    // Manipule erros
+                    console.error('Erro:', error);
+                });
+        }
+
+        // Função para exibir os comentários na página
+        function displayComments(comments) {
+            var commentsContainer = document.getElementById('comments');
+
+            // Limpe o conteúdo atual dos comentários
+            commentsContainer.innerHTML = '';
+
+            // Itere sobre os comentários e crie elementos HTML para cada um
+            comments.forEach(function(comment) {
+                var commentElement = document.createElement('div');
+                commentElement.innerHTML = '<strong>' + comment.title + '</strong><br>' + comment.body;
+                commentsContainer.appendChild(commentElement);
+            });
+        }
+
+        // Chame a função para recuperar os comentários ao carregar a página
+        window.onload = function() {
+            getCommentsFromGitHub();
+        };
+    </script>
+
+    <!-- Rodapé -->
+    <footer class="footer" style="background-color: #007bff; color: #ffffff; padding: 20px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Direitos autorais © 2024 Claueder Barros. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-right">
+                        <li class="list-inline-item"><a href="#">Política de Privacidade</a></li>
+                        <li class="list-inline-item"><a href="#">Termos de Uso</a></li>
+                        <li class="list-inline-item"><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+os aqui */
         .header {
             background-color: #007bff; /* Cor de fundo do cabeçalho */
             color: #fff; /* Cor do texto */

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação - Claueder Barros</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo de CSS personalizado -->
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <h1 class="display-4">Apoie o Blog Claueder Barros</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="postagens.html">Postagens</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="doacao.html">Doação</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="mb-4">Contribua para a Continuidade do Blog</h2>
+                <p>
+                    O blog <strong>Claueder Barros</strong> é um espaço onde compartilho minhas reflexões, meditações guiadas e vivências no sítio. Manter este espaço funcionando requer tempo e recursos, e qualquer ajuda é muito bem-vinda. Se você gosta do conteúdo que encontra aqui, considere fazer uma doação para ajudar a manter o blog e permitir que eu continue criando.
+                </p>
+
+                <h3 class="my-4">Formas de Contribuir</h3>
+
+                <!-- Botões de Doação -->
+                <div class="d-flex justify-content-center">
+                    <!-- Exemplo de Doação via PayPal -->
+                    <a href="https://www.paypal.com/donate" target="_blank" class="btn btn-primary me-3">Doar via PayPal</a>
+
+                    <!-- Exemplo de Chave PIX -->
+                    <button class="btn btn-success me-3" data-bs-toggle="modal" data-bs-target="#pixModal">Doar via PIX</button>
+
+                    <!-- Exemplo de Patreon -->
+                    <a href="https://www.patreon.com" target="_blank" class="btn btn-warning">Apoiar no Patreon</a>
+                </div>
+
+                <!-- Modal para doação via PIX -->
+                <div class="modal fade" id="pixModal" tabindex="-1" aria-labelledby="pixModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="pixModalLabel">Doação via PIX</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Chave PIX: <strong>12345678900</strong></p>
+                                <p>Copie a chave acima e faça uma doação de qualquer valor diretamente pelo seu banco.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto final de agradecimento -->
+                <p class="mt-5">
+                    Sua contribuição, seja qual for o valor, ajuda a manter esse espaço vivo e permite que eu continue trazendo conteúdo de valor para todos. Muito obrigado pelo apoio!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Claueder Barros. Todos os direitos reservados.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="contato.html" class="text-white">Contato</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Política de Privacidade</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Termos de Serviço</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

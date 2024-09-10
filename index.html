@@ -1,158 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controlando a Esquizofrenia</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        /* Estilos personalizados podem ser adicionados aqui */
-        .header {
-            background-color: #007bff; /* Cor de fundo do cabeçalho */
-            color: #fff; /* Cor do texto */
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 20px; /* Adiciona margem na parte inferior */
-        }
-
-        .header h1 {
-            font-size: 36px; /* Tamanho da fonte do título */
-            font-weight: bold; /* Peso da fonte */
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 18px; /* Tamanho da fonte do subtexto */
-            font-style: italic; /* Estilo da fonte */
-        }
-
-        .post img {
-            margin-top: 20px; /* Adiciona margem na parte superior da foto */
-            margin-bottom: 20px; /* Adiciona margem na parte inferior da foto */
-        }
-
-        /* Estilos para o formulário de comentário */
-        #comment-form {
-            margin-top: 20px;
-        }
-    </style>
+    <title>Claueder Barros</title>
+    <!-- Link do CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo de CSS personalizado -->
 </head>
-
 <body>
+
     <!-- Cabeçalho -->
-    <header class="header">
+    <header class="bg-primary text-white text-center py-4">
         <div class="container">
-            <h1>Controlando a Esquizofrenia</h1>
-            <p>Navegando pelos desafios diários em busca de uma vida plena</p>
+            <h1 class="display-4">Claueder Barros</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#postagens">Postagens</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#doacao">Doação</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Post -->
-        <div class="post">
-            <!-- Texto do post -->
-            <p class="mt-3"><strong>09/04/2024</strong></p>
-            <p>Bom dia, pessoal! ☀️ Hoje é um novo dia e estou pronto para começar meu trabalho aqui no Facebook, compartilhando momentos significativos e reflexões com vocês. Vamos fazer deste dia algo especial juntos!
-                Ontem, decidi fazer um vídeo para compartilhar com vocês, pois não estava me sentindo bem. Hoje, ao acordar, apesar de ter tido um pesadelo desagradável, percebo que estou me sentindo melhor. Acredito que nossos sonhos são mensagens do nosso subconsciente, então sempre tento refletir sobre eles, mesmo que não os compartilhe. No entanto, o importante é que consegui dormir esta noite, o que já é um progresso positivo.
+    <!-- Área Principal -->
+    <main class="container mt-5">
+        <div class="row">
+            <!-- Área de Postagens -->
+            <section id="postagens" class="col-lg-8">
+                <article class="mb-4">
+                    <h2 class="h3">Título do Post 1</h2>
+                    <p>Este é um resumo do primeiro post. A postagem completa pode ser lida clicando no link abaixo.</p>
+                    <a href="#" class="btn btn-primary">Leia mais</a>
+                </article>
 
-                Hoje, começo o dia cheio de animação. Decidi postar uma sequência de fotos e vídeos neste álbum do Facebook, além de atualizar o site que estou desenvolvendo. Ao fazer isso, continuo aprimorando minhas habilidades de desenvolvedor enquanto compartilho minha jornada com vocês.
+                <article class="mb-4">
+                    <h2 class="h3">Título do Post 2</h2>
+                    <p>Este é o resumo do segundo post. Clique no link para continuar lendo.</p>
+                    <a href="#" class="btn btn-primary">Leia mais</a>
+                </article>
+            </section>
 
-                Então, este é meu bom dia! Vamos explorar juntos as estratégias que venho desenvolvendo em colaboração com minha psicóloga, Amata Medeiros. Estou animado para compartilhar mais com vocês e continuar crescendo juntos.</p>
-
-            <!-- Comentários -->
-            <div id="comments">
-                <!-- Aqui serão exibidos os comentários -->
-            </div>
-
-            <!-- Formulário de comentário -->
-            <form id="comment-form" action="https://github.com/SeuNome/SeuRepositorio/issues/new" method="GET">
-                <input type="hidden" name="title" value="Novo Comentário - Controlando a Esquizofrenia">
-                <input type="hidden" name="labels" value="comentário">
-                <input type="hidden" name="assignees" value="">
-
-                <div class="form-group">
-                    <label for="comment">Deixe seu comentário:</label>
-                    <textarea class="form-control" id="comment" name="body" rows="3" required></textarea>
+            <!-- Área de Outros Posts (Sidebar) -->
+            <aside class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="h5">Sobre o Autor</h3>
+                        <p>Claueder Barros é um amante da natureza e da simplicidade. Compartilha suas experiências e reflexões sobre a vida no campo e a espiritualidade.</p>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar Comentário</button>
-            </form>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="h5">Postagens Populares</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Postagem Popular 1</a></li>
+                            <li><a href="#">Postagem Popular 2</a></li>
+                            <li><a href="#">Postagem Popular 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
         </div>
-    </div>
+    </main>
 
-    <!-- Bootstrap JavaScript (opcional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Script para recuperar os comentários do GitHub -->
-    <script>
-        // Função para recuperar os comentários do GitHub
-        function getCommentsFromGitHub() {
-            // URL da API do GitHub para recuperar issues
-            var apiUrl = 'https://api.github.com/repos/SeuNome/SeuRepositorio/issues';
-
-            // Faça uma solicitação GET para a API do GitHub
-            fetch(apiUrl)
-                .then(function(response) {
-                    // Verifique se a resposta foi bem-sucedida
-                    if (response.ok) {
-                        // Parseie a resposta como JSON
-                        return response.json();
-                    }
-                    // Se a resposta não for bem-sucedida, lance um erro
-                    throw new Error('Erro ao recuperar os comentários do GitHub');
-                })
-                .then(function(data) {
-                    // Manipule os dados recebidos (comentários)
-                    displayComments(data);
-                })
-                .catch(function(error) {
-                    // Manipule erros
-                    console.error('Erro:', error);
-                });
-        }
-
-        // Função para exibir os comentários na página
-        function displayComments(comments) {
-            var commentsContainer = document.getElementById('comments');
-
-            // Limpe o conteúdo atual dos comentários
-            commentsContainer.innerHTML = '';
-
-            // Itere sobre os comentários e crie elementos HTML para cada um
-            comments.forEach(function(comment) {
-                var commentElement = document.createElement('div');
-                commentElement.innerHTML = '<strong>' + comment.title + '</strong><br>' + comment.body;
-                commentsContainer.appendChild(commentElement);
-            });
-        }
-
-        // Chame a função para recuperar os comentários ao carregar a página
-        window.onload = function() {
-            getCommentsFromGitHub();
-        };
-    </script>
+    <!-- Área de Doação -->
+    <section id="doacao" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Doe para o Blog</h2>
+            <p class="lead">Ajude a manter o blog funcionando e apoiar a criação de conteúdo. Toda contribuição é bem-vinda!</p>
+            <a href="#" class="btn btn-success">Fazer uma Doação</a>
+        </div>
+    </section>
 
     <!-- Rodapé -->
-    <footer class="footer" style="background-color: #007bff; color: #ffffff; padding: 20px;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>Direitos autorais © 2024 Claueder Barros. Todos os direitos reservados.</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-inline text-right">
-                        <li class="list-inline-item"><a href="#">Política de Privacidade</a></li>
-                        <li class="list-inline-item"><a href="#">Termos de Uso</a></li>
-                        <li class="list-inline-item"><a href="#">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Claueder Barros. Todos os direitos reservados.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#contato" class="text-white">Contato</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Política de Privacidade</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Termos de Serviço</a></li>
+            </ul>
         </div>
     </footer>
-</body>
 
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

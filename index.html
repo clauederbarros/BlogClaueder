@@ -1,101 +1,225 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claueder Barros</title>
-    <!-- Link do CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Arquivo de CSS personalizado -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Espiritualista Vozes da Alma</title>
+  
+  <!-- Importando o CSS do Bootstrap para estilização -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Estilos personalizados para a página -->
+  <style>
+    /* Estilo do corpo (corpo da página) */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+    }
+    
+    /* Estilo para o logo no cabeçalho */
+    .header-logo {
+      font-size: 3.5rem; /* Aumenta o tamanho da fonte */
+      font-weight: 900; /* Define uma espessura maior para o título */
+      color: #6a0dad; /* Cor roxa suave */
+      text-shadow: 0 0 10px rgba(106, 13, 173, 0.5), /* Suave brilho roxo */
+                   0 0 20px rgba(106, 13, 173, 0.3); /* Aura ao redor */
+    }
+    
+    /* Estilo para a barra de navegação */
+    .navbar {
+      background-color: #f7f7f7;
+    }
+
+    /* Estilo para os links do menu de navegação */
+    .navbar-nav a {
+      font-weight: bold;
+      color: #6a0dad;
+    }
+    
+    /* Estilo para o banner (imagem principal) */
+    .banner {
+      position: relative;
+      background-image: url('imagens/pagina_inicial.webp'); /* Caminho da imagem de fundo */
+      background-size: cover;
+      background-position: center;
+      height: 80vh; /* Altura do banner */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Sobreposição (overlay) para deixar o texto do banner legível */
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Overlay escura */
+    }
+
+    /* Estilo do texto no banner */
+    .banner-text {
+      position: relative;
+      color: white;
+      text-align: center;
+      z-index: 1; /* Garante que o texto fique sobre o overlay */
+      max-width: 90%; /* Limite de largura para evitar que o texto ultrapasse a imagem */
+      margin: 0 auto; /* Centraliza o texto horizontalmente */
+    }
+
+    /* Estilo do título no banner */
+    .banner-text h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para tornar o texto mais legível */
+    }
+
+    /* Estilo do subtítulo no banner */
+    .banner-text p {
+      font-size: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra no subtítulo */
+    }
+
+    /* Ajustes para telas menores (responsividade) */
+    @media (max-width: 768px) {
+      .banner-text h1 {
+        font-size: 2.5rem; /* Reduz o tamanho do título para dispositivos menores */
+      }
+      .banner-text p {
+        font-size: 1.2rem; /* Reduz o tamanho do subtítulo */
+      }
+    }
+
+    /* Estilo para títulos de seções destacadas */
+    .highlight-section h2 {
+      color: #6a0dad; /* Cor roxa suave */
+    }
+
+    /* Estilo do rodapé */
+    .footer {
+      background-color: #6a0dad;
+      color: white;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="bg-primary text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4">Claueder Barros</h1>
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="sobre">Sobre.html</a></li>
-                            <li class="nav-item"><a class="nav-link" href="postagens">Postagens.html</a></li>
-                            <li class="nav-item"><a class="nav-link" href="doacao">Doação.html</a></li>
-                         
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+<!-- Cabeçalho -->
+<header class="container-fluid">
+  <div class="row py-3">
+    <div class="col text-center">
+      <!-- Logo do grupo -->
+      <div class="header-logo">Vozes da Alma</div>
+    </div>
+  </div>
+</header>
+
+<!-- Barra de Navegação -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <!-- Link para a página inicial -->
+    <a class="navbar-brand" href="#">Início</a>
+    
+    <!-- Botão para abrir o menu no celular -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Links do menu de navegação -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre o Grupo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Conteúdos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Seção do Banner Principal -->
+<section class="banner">
+  <!-- Overlay escuro para destacar o texto -->
+  <div class="banner-overlay"></div>
+  
+  <!-- Texto no banner -->
+  <div class="banner-text">
+    <h1>Onde as Vozes da Alma se Encontram</h1>
+    <p>Compartilhando Sabedoria e Encontrando Equilíbrio entre o Céu e a Terra</p>
+    <!-- Botão para se juntar ao grupo -->
+    <a href="#" class="btn btn-light btn-lg">Junte-se ao Grupo</a>
+  </div>
+</section>
+
+<!-- Seção de Destaques (Artigos em Destaque) -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Reflexões Espirituais em Destaque</h2>
+    </div>
+  </div>
+  
+  <!-- Artigo 1: A Jornada da Alma -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <h5 class="card-title">A Jornada da Alma</h5>
+          <p class="card-text">Explorando como equilibrar o mundo espiritual com o terreno, e o papel da alma nessa jornada.</p>
+          <a href="#" class="btn btn-outline-primary">Leia Mais</a>
         </div>
-    </header>
-
-    <!-- Área Principal -->
-    <main class="container mt-5">
-        <div class="row">
-            <!-- Área de Postagens -->
-            <section id="postagens" class="col-lg-8">
-                <article class="mb-4">
-                    <h2 class="h3">Título do Post 1</h2>
-                    <p>Este é um resumo do primeiro post. A postagem completa pode ser lida clicando no link abaixo.</p>
-                    <a href="#" class="btn btn-primary">Leia mais</a>
-                </article>
-
-                <article class="mb-4">
-                    <h2 class="h3">Título do Post 2</h2>
-                    <p>Este é o resumo do segundo post. Clique no link para continuar lendo.</p>
-                    <a href="#" class="btn btn-primary">Leia mais</a>
-                </article>
-            </section>
-
-            <!-- Área de Outros Posts (Sidebar) -->
-            <aside class="col-lg-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="h5">Sobre o Autor</h3>
-                        <p>Claueder Barros é um amante da natureza e da simplicidade. Compartilha suas experiências e reflexões sobre a vida no campo e a espiritualidade.</p>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h3 class="h5">Postagens Populares</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Postagem Popular 1</a></li>
-                            <li><a href="#">Postagem Popular 2</a></li>
-                            <li><a href="#">Postagem Popular 3</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
+      </div>
+    </div>
+    
+    <!-- Artigo 2: Encontrando Luz na Escuridão -->
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <h5 class="card-title">Encontrando Luz na Escuridão</h5>
+          <p class="card-text">Reflexão sobre como enfrentar os desafios da vida com uma perspectiva espiritual.</p>
+          <a href="#" class="btn btn-outline-primary">Leia Mais</a>
         </div>
-    </main>
-
-    <!-- Área de Doação -->
-    <section id="doacao" class="bg-light py-5">
-        <div class="container text-center">
-            <h2>Doe para o Blog</h2>
-            <p class="lead">Ajude a manter o blog funcionando e apoiar a criação de conteúdo. Toda contribuição é bem-vinda!</p>
-            <a href="#" class="btn btn-success">Fazer uma Doação</a>
+      </div>
+    </div>
+    
+    <!-- Artigo 3: O Poder da Introspecção -->
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <h5 class="card-title">O Poder da Introspecção</h5>
+          <p class="card-text">A importância de reservar momentos de introspecção para encontrar respostas dentro de si.</p>
+          <a href="#" class="btn btn-outline-primary">Leia Mais</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Rodapé -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2024 Claueder Barros. Todos os direitos reservados.</p>
-            <ul class="list-inline">
-            
-                <li class="list-inline-item"><a href="#" class="text-white">Política de Privacidade</a></li>
-                <li class="list-inline-item"><a href="#" class="text-white">Termos de Serviço</a></li>
-            </ul>
-        </div>
-    </footer>
+<!-- Seção de Missão -->
+<section class="container my-5 text-center">
+  <h2>Nossa Missão</h2>
+  <p>Ajudar pessoas a encontrar o equilíbrio entre o material e o espiritual, promovendo o autoconhecimento, a cura emocional e o crescimento pessoal.</p>
+  <a href="#" class="btn btn-primary btn-lg">Saiba Mais</a>
+</section>
 
-    <!-- Scripts do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Rodapé -->
+<footer class="footer">
+  <div class="container text-center">
+    <p>© 2024 Grupo Espiritualista Vozes da Alma. Todos os direitos reservados.</p>
+    <div class="social-icons">
+      <a href="#" class="text-white mx-2">Facebook</a>
+      <a href="#" class="text-white mx-2">Instagram</a>
+      <a href="#" class="text-white mx-2">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Importando JavaScript do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
